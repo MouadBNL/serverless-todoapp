@@ -3,6 +3,7 @@
     <div id="new-task">
       <input type="text" class="title" placeholder="Task Title" @keyup.enter="addTask" v-model="newTaskTitle">
       <textarea name="task-desc" id="task-desc" rows="5" placeholder="Task description" v-model="newTaskDesc"></textarea>
+        <span class="add"><i class="fas fa-plus" @click="addTask"></i></span>
     </div>
     <div id="tasks">
       <div v-for="todo in todos" :key="todo.id" class="task">
@@ -153,6 +154,22 @@ input, textarea {
   border-radius: 8px;
   z-index: 10;
 
+  -webkit-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.31);
+  -moz-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.31);
+  box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.31);
+}
+.add{
+  height: 44px;
+  width: 44px;
+  border-radius: 44px;
+  background: #41B883;
+  position: absolute;
+  right: 30px;
+  bottom: -22px;
+  font-size: 18px;
+  cursor: pointer;
+  color: white;
+  line-height: 44px;
   -webkit-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.31);
   -moz-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.31);
   box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.31);
